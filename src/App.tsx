@@ -1,8 +1,33 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Header from './components/Header/Header';
+import { 
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 function App() {
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/about">
+            <Header />
+            <About />
+          </Route>
+          <Route path="/">
+            <Header />
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+function Home() {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +46,10 @@ function App() {
       </header>
     </div>
   );
+}
+
+function About() {
+  return <h2>About</h2>;
 }
 
 export default App;

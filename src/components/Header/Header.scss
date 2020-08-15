@@ -1,0 +1,19 @@
+.nav-header {
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    overflow: hidden;
+}
+
+.nav-header-list {
+    list-style: none;
+}
+
+.nav-header-list li a {
+    float: left;
+    color: #e1e1e1;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
