@@ -19,7 +19,7 @@ function Header() {
                 <NavLink exact to="/about" aria-current="page">About</NavLink>
               </li>
               <li>
-                <NavLink exact to="/users" aria-current="page">Users</NavLink>
+                <NavLink exact to="/adder" aria-current="page">Adder</NavLink>
               </li>
             </ul>
           </nav>

@@ -13,6 +13,10 @@ function App() {
     <Router>
       <div>
         <Switch>
+          <Route path="/adder">
+            <Header />
+            <Adder />
+          </Route>
           <Route path="/about">
             <Header />
             <About />
@@ -50,6 +54,10 @@ function Home() {
 
 function About() {
   return <h2>About</h2>;
+}
+
+function Adder() {
+  return <h2>Adder WIP</h2>;
 }
 
 export default App;
