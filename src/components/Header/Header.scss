@@ -1,19 +1,40 @@
 .nav-header {
-    margin: 0;
-    padding: 0;
-    background-color: #111;
+    background-color: #FFF;
     overflow: hidden;
 }
 
-.nav-header-list {
-    list-style: none;
+.nav-header-pages {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   height: 60px;
+
+    li {
+        display: inline;
+    }
+
+   li a {
+        float: left;
+        color: #00A1E4;
+        text-align: center;
+        margin: 10px 5px;
+        padding: 0 10px;
+        line-height: 40px;
+        text-decoration: none;
+        font-size: 17px;
+        border-radius: 30px;
+
+        &:hover {
+            background-color: #1B4079;
+            color: white;
+        }
+
+        &.active {
+            background-color: #EF8354;
+            color: white;
+        }
+    }
 }
 
-.nav-header-list li a {
-    float: left;
-    color: #e1e1e1;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
+
+

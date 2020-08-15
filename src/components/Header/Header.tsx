@@ -1,19 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Header.scss';
 
 function Header() {
     return  (
         <nav className="nav-header">
-          <ul className="nav-header-list">
+          <ul className="nav-header-pages">
             <li>
-              <Link to="/">Home</Link>
+              <NavLink exact to="/" aria-current="page">Home</NavLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink exact to="/about" aria-current="page">About</NavLink>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <NavLink exact to="/users" aria-current="page">Users</NavLink>
             </li>
           </ul>
         </nav>
