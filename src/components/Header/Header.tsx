@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { ReactComponent as AmbetekLogo2 } from '../../resources/ambetek2.svg';
 import './Header.scss';
 
 function Header() {
     return  (
         <header className="nav-header">
           <Link to="/">
-            <h2 className="nav-header-logo">
-                Ambetek                
-            </h2>
+            <AmbetekLogo2 className="nav-header-logo" />
           </Link>
           <nav className="nav-header-nav">
             <ul className="nav-header-pages">

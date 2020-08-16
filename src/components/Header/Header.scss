@@ -12,16 +12,26 @@
 }
 
 .nav-header-logo {
-    color: #1B4079;
-    padding: 0 20px;
-    line-height: 60px;
-    font-size: 32px;
-    margin: 0;
+    padding: 5px 10px;
+    height: 50px;
+    width: 150px;
     display: inline;
-    text-align: center;
-    text-align: -moz-center;
     float: left;
-    //box-shadow: 1px 0px rgba(0,0,0,0.1);
+    fill: #1B4079;
+    stroke: #1B4079;
+
+    h2 {
+        color: #1B4079;
+        padding: 0 20px;
+        line-height: 60px;
+        font-size: 32px;
+        margin: 0;
+        display: inline;
+        text-align: center;
+        text-align: -moz-center;
+        float: left;
+        //box-shadow: 1px 0px rgba(0,0,0,0.1);
+    }
 }
 
 .nav-header-pages {
