@@ -9,36 +9,38 @@ html, body {
     height: 50px;
     display: grid;
     grid-template-columns: auto 40% 20% 50px;
-    grid-column-start: 1;
-    grid-column-end: 5;
     box-shadow: rgba(0,0,0,0.1) 0 1px;
     margin-bottom: 3px;
     border-radius: 5px;
+
+    .adder-header-code, .adder-header-name, .adder-header-price {
+        margin: 0;
+        padding: 0;
+        line-height: 50px;
+        font-weight: 600;
+    }
+    
+    .adder-header-code {
+        padding-left: 10px;
+    }
+
+    .adder-header-price {
+        text-align: right;
+    }
 }
 
-.adder-header-code, .adder-header-name, .adder-header-price {
-    margin: 0;
-    padding: 0;
-    line-height: 50px;
-    font-weight: 600;
-}
 
-.adder-header-code {
-    padding-left: 10px;
-}
 
 .adder-add-row {
     overflow: hidden;
     height: 50px;
     display: grid;
     grid-template-columns: auto 40% 20% 50px;
-    grid-column-start: 1;
-    grid-column-end: 5;
     box-shadow: rgba(0,0,0,0.1) 0 1px;
     margin-bottom: 3px;
     border-radius: 5px;
 
-    .adder-add-code, .adder-add-name, .adder-add-price, .adder-add-placeholder {
+    .adder-add-code, .adder-add-name, .adder-add-price, .adder-add-add {
         margin: 0;
         padding: 0;
         line-height: 50px;
@@ -48,15 +50,64 @@ html, body {
     .adder-add-code {
         padding-left: 10px;
     }
+
+    .adder-add-code {
+        input[type=text] {
+            @keyframes underlinehover {
+                from {border-bottom: 1px solid rgba(0,0,0,0.1)}
+                to { border-bottom: 1px solid rgba(0,0,0,0.5)}
+            }
+
+            width: 90%;
+            margin: 0;
+            padding: 0;
+            border: none;
+            
+            line-height: 20px;
+            background-color: transparent;
+            box-sizing: border-box;
+            font-style: italic;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+
+            &:hover {
+                animation-name: underlinehover;
+                animation-duration: 0.5s;
+                border-bottom: 1px solid rgba(0,0,0,0.5);
+            }
+
+            &:focus {
+                border-bottom: 1px solid rgba(0,0,0,0.5);
+
+                /*
+                &::placeholder {
+                    display: absolute;
+                    font-family: Arial;
+                    color: black;
+                    opacity: 1;
+                    font-weight: 400;
+                    font-style: normal;
+                    transition: 0.2s;
+                    transition-timing-function: ease;
+
+                    transform: scale(0.5) translateY(-100%) translateX(-30px);
+                }
+                */
+            }
+        }
+
+        .error {
+
+        }
+    }
 }
 
 .adder-container {
+    overflow: hidden;
+    overflow-y: auto;
     display: flex;
-    height: calc(100vh - 60px);
+    max-height: calc(100vh - 60px);
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex: none;
+    flex-flow: column nowrap;
 }
 
 .adder-grid {
@@ -66,7 +117,10 @@ html, body {
     width: 100%;
     max-width: 1000px;
     display: grid;
-    grid-template-columns: 30% 40% 20% 10%;
-    background-color: #999999;
+    grid-template-columns: 100%;
+    background-color: #EEEEEE;
     border-radius: 5px;
+    flex: none;
+
+    box-shadow: 3px 4px 3px 1px rgba(0,0,0,0.2)
 }

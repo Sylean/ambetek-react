@@ -1,0 +1,51 @@
+.adder-summary {
+    flex: none;
+    overflow: hidden;
+    padding: 10px 10px;
+    margin: 20px 20px;
+    width: 100%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: auto calc(100px + 20% + 50px);
+    
+    
+    /* Force scroll area to account for margin */
+    border-bottom: 20px solid transparent;
+}
+
+.adder-summary-container {
+    overflow: hidden;
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-template-columns: 100px auto 50px;
+    background-color: #EEEEEE;
+    border-radius: 5px;
+
+    box-shadow: 3px 4px 3px 1px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+
+.adder-summary-row {
+    overflow: hidden;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 100px auto 50px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    box-shadow: rgba(0,0,0,0.1) 0 1px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+
+    line-height: 50px;
+    box-sizing: border-box;
+}
+
+.adder-summary-first {
+    padding-left: 10px;
+    font-weight:  600;
+}
+
+.adder-summary-second {
+    text-align: right;
+}
