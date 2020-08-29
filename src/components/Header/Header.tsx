@@ -6,22 +6,31 @@ import './Header.scss';
 function Header() {
     return  (
         <header className="nav-header">
-          <Link to="/">
-            <AmbetekLogo2 className="nav-header-logo" />
-          </Link>
-          <nav className="nav-header-nav">
-            <ul className="nav-header-pages">
-              <li>
-                <NavLink exact to="/" aria-current="page">Home</NavLink>
-              </li>
-              <li>
-                <NavLink exact to="/about" aria-current="page">About</NavLink>
-              </li>
-              <li>
-                <NavLink exact to="/adder" aria-current="page">Adder</NavLink>
-              </li>
+          <div className="nav-header-left">
+            <Link to="/">
+              <AmbetekLogo2 className="nav-header-logo" />
+            </Link>
+            <nav className="nav-header-nav">
+              <ul className="nav-header-pages">
+                <li>
+                  <NavLink exact to="/" aria-current="page">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink exact to="/about" aria-current="page">About</NavLink>
+                </li>
+                <li>
+                  <NavLink exact to="/adder" aria-current="page">Adder</NavLink>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="nav-header-right">
+            <ul className="nav-header-right-links">
+                <li>
+                  <a href="mailto:anson.prima@gmail.com" className="nav-header-contact">Contact Me</a>
+                </li>
             </ul>
-          </nav>
+          </div>
         </header>
     );
 }

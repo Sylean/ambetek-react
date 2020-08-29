@@ -1,7 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.scss';
 import Header from './components/Header/Header';
+import Home from './components/Home/Home';
+import Adder from './components/Adder/Adder';
+import NotFound404 from './components/NotFound404/NotFound404';
 import { 
   BrowserRouter as Router,
   Route,
@@ -13,17 +16,21 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route path="/adder">
+          <Route exact path="/adder">
             <Header />
             <Adder />
           </Route>
-          <Route path="/about">
+          <Route exact path="/about">
             <Header />
             <About />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Header />
             <Home />
+          </Route>
+          <Route>
+            <Header />
+            <NotFound404 />
           </Route>
         </Switch>
       </div>
@@ -31,6 +38,7 @@ function App() {
   );
 }
 
+/*
 function Home() {
   return (
     <div className="App">
@@ -51,13 +59,10 @@ function Home() {
     </div>
   );
 }
+*/
 
 function About() {
   return <h2>About</h2>;
-}
-
-function Adder() {
-  return <h2>Adder WIP</h2>;
 }
 
 export default App;
