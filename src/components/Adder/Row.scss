@@ -1,0 +1,33 @@
+.adder-row {
+    overflow: hidden;
+    height: 50px;
+    display: grid;
+    grid-template-columns: auto 40% 20% 50px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    box-shadow: rgba(0,0,0,0.1) 0 1px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+.adder-row-code, .adder-row-name, .adder-row-price {
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+}
+
+.adder-row-code {
+    padding-left: 10px;
+}
+
+.adder-row-name {
+    
+}
+
+.adder-row-price {
+    
+}
+
+.adder-row-delete {
+    
+}

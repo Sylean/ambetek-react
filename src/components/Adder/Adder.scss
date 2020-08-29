@@ -1,0 +1,72 @@
+html, body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.adder-header {
+    overflow: hidden;
+    height: 50px;
+    display: grid;
+    grid-template-columns: auto 40% 20% 50px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    box-shadow: rgba(0,0,0,0.1) 0 1px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+.adder-header-code, .adder-header-name, .adder-header-price {
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+    font-weight: 600;
+}
+
+.adder-header-code {
+    padding-left: 10px;
+}
+
+.adder-add-row {
+    overflow: hidden;
+    height: 50px;
+    display: grid;
+    grid-template-columns: auto 40% 20% 50px;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    box-shadow: rgba(0,0,0,0.1) 0 1px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+
+    .adder-add-code, .adder-add-name, .adder-add-price, .adder-add-placeholder {
+        margin: 0;
+        padding: 0;
+        line-height: 50px;
+        font-weight: 600;
+    }
+
+    .adder-add-code {
+        padding-left: 10px;
+    }
+}
+
+.adder-container {
+    display: flex;
+    height: calc(100vh - 60px);
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+}
+
+.adder-grid {
+    overflow: hidden;
+    padding: 10px 10px;
+    margin: 20px 20px;
+    width: 100%;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: 30% 40% 20% 10%;
+    background-color: #999999;
+    border-radius: 5px;
+}
