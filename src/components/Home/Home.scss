@@ -1,40 +1,55 @@
 html, body {
     height: 100vh;
+    height: -webkit-fill-available;
     overflow: hidden;
 }
 
 .home-container {
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     display: flex;
     scroll-snap-type: y mandatory;
-    height: calc(100vh - 60px);
+    height: calc(100% - 60px);
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     flex-flow: column nowrap;
     flex: none;
+
+    @media only screen and (max-width: 554px) {
+        height: calc(100% - 120px);
+    }
 }
 
 .home-slide {
-    align-items: center;
-    justify-content: center;
-
-    display: flex;
-    overflow: auto;
-    flex: none;
-    scroll-snap-align: start;
     height: 100%;
     width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    overflow: hidden;
+    flex: none;
+    scroll-snap-align: start;
+    
     box-shadow: rgba(0,0,0,0.1) 0 1px;
 
     h1 {
+        margin: 0;
         font-weight: 200;
         font-size: 128px;
     }
 }
 
+.sizer {
+    display: flex;
+    flex: 1 1 100%;
+    align-items: stretch;
+}
+
 .splash {
+    display: flex;
     flex-flow: column nowrap;
 }
 

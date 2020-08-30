@@ -24,16 +24,7 @@ class Adder extends Component<{}, AdderState> {
         super(props);
 
         this.state = {
-            labs: [{
-                code: "763X",
-                name: "PTT (Activated)",
-                price: 5.5,
-            },
-            {
-                code: "123",
-                name: "test",
-                price: 10,
-            }],
+            labs: [],
             rowValid: true,
             inputValue: "",
         };
@@ -83,37 +74,39 @@ class Adder extends Component<{}, AdderState> {
     );
 
         return (
-            <div className="adder-container">
-                <div className="adder-grid">
-                    <div className="adder-header">
-                        <div className="adder-header-code"> Code </div>
-                        <div className="adder-header-name"> Name </div>
-                        <div className="adder-header-price"> Price </div>
-                        <div className="adder-header-placeholder">  </div>
-                    </div>
-                    {rowList}
-                    <div className="adder-add-row">
-                        <div className={`adder-add-code ${this.state.rowValid ? "" : "invalid-input"}`}>
-                            <input 
-                                aria-label="ID Code" 
-                                aria-required={true} 
-                                type="text"
-                                autoComplete="on"
-                                autoFocus={true}
-                                required={true}
-                                pattern={"[a-zA-Z0-9]+"}
-                                placeholder="ID Code"
-                                value={this.state.inputValue}
-                                onChange={this._handleChange}
-                                onKeyDown={this._handleKeyDown}
-                                 />
+            <div className="adder-min-margin">
+                <div className="adder-container">
+                    <div className="adder-grid">
+                        <div className="adder-header">
+                            <div className="adder-header-code"> Code </div>
+                            <div className="adder-header-name"> Name </div>
+                            <div className="adder-header-price"> Price </div>
+                            <div className="adder-header-placeholder">  </div>
                         </div>
-                        <div className="adder-add-name"></div>
-                        <div className="adder-add-price"></div>
-                        <div className="adder-add-add"></div>
+                        {rowList}
+                        <div className="adder-add-row">
+                            <div className={`adder-add-code ${this.state.rowValid ? "" : "invalid-input"}`}>
+                                <input 
+                                    aria-label="ID Code" 
+                                    aria-required={true} 
+                                    type="text"
+                                    autoComplete="on"
+                                    autoFocus={true}
+                                    required={true}
+                                    pattern={"[a-zA-Z0-9]+"}
+                                    placeholder="ID Code"
+                                    value={this.state.inputValue}
+                                    onChange={this._handleChange}
+                                    onKeyDown={this._handleKeyDown}
+                                    />
+                            </div>
+                            <div className="adder-add-name"></div>
+                            <div className="adder-add-price"></div>
+                            <div className="adder-add-add"></div>
+                        </div>
                     </div>
+                    <Summary subtotal={this._computeRowSubtotal(this.state.labs)} IVFee={IVFee} total={this._computeRowTotal(this.state.labs)} />
                 </div>
-                <Summary subtotal={this._computeRowSubtotal(this.state.labs)} IVFee={IVFee} total={this._computeRowTotal(this.state.labs)} />
             </div>
         );
     }

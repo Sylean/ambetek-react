@@ -2,11 +2,11 @@
     flex: none;
     overflow: hidden;
     padding: 10px 10px;
-    margin: 20px 20px;
-    width: 100%;
-    max-width: 1000px;
+    margin: 20px auto;
+    width: calc(100% - 40px);
+    max-width: 700px;
     display: grid;
-    grid-template-columns: auto calc(100px + 20% + 50px);
+    grid-template-columns: auto calc(100px + 10% + 50px);
     
     
     /* Force scroll area to account for margin */
