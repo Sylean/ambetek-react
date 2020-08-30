@@ -8,7 +8,7 @@ html, body {
     overflow: hidden;
     height: 50px;
     display: grid;
-    grid-template-columns: auto 40% 10% 50px;
+    grid-template-columns: auto 60% 10% 50px;
     box-shadow: rgba(0,0,0,0.1) 0 1px;
     margin-bottom: 3px;
     border-radius: 5px;
@@ -29,13 +29,29 @@ html, body {
     }
 }
 
+.adder-row-enter {
+    opacity: 0;
+}
 
+.adder-row-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.adder-row-exit {
+    opacity: 1
+}
+
+.adder-row-exit-active {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+}
 
 .adder-add-row {
     overflow: hidden;
     height: 50px;
     display: grid;
-    grid-template-columns: auto 40% 10% 50px;
+    grid-template-columns: auto 60% 10% 50px;
     box-shadow: rgba(0,0,0,0.1) 0 1px;
     margin-bottom: 3px;
     border-radius: 5px;
@@ -66,18 +82,24 @@ html, body {
             line-height: 20px;
             background-color: transparent;
             box-sizing: border-box;
-            font-style: italic;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+            transition-timing-function: ease-in-out;
             border-bottom: 1px solid rgba(0,0,0,0.1);
+            transition: border-bottom 0.2s;
+            transition-timing-function: ease-in-out;
 
             &:hover {
-                animation-name: underlinehover;
-                animation-duration: 0.5s;
+                transition: border-bottom 0.2s;
+                transition-timing-function: ease-in-out;
                 border-bottom: 1px solid rgba(0,0,0,0.5);
             }
 
             &:focus {
                 border-bottom: 1px solid rgba(0,0,0,0.5);
-
+                opacity: 1;
+                transition: opacity 0.2s;
+                transition-timing-function: ease-in-out;
                 /*
                 &::placeholder {
                     display: absolute;

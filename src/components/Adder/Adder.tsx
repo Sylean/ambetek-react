@@ -3,10 +3,13 @@ import Row from './Row';
 import Summary from './Summary';
 import './Adder.scss';
 import { verifyLabCode, returnLabObject } from  './Resources/Labs';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { v4 as uuidv4 } from 'uuid';
 
 const IVFee = 5;
 
 type LabObject = {
+    id: string,
     code: string,
     name: string,
     price: number,
@@ -32,6 +35,7 @@ class Adder extends Component<{}, AdderState> {
         this._handleKeyDown = this._handleKeyDown.bind(this);
         this._handleChange = this._handleChange.bind(this);
         this._computeRowTotal = this._computeRowTotal.bind(this);
+        this._deleteRow = this._deleteRow.bind(this);
     }
 
     _handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
@@ -49,7 +53,15 @@ class Adder extends Component<{}, AdderState> {
     }
 
     _buildRow() {
-        return returnLabObject(this.state.inputValue) as LabObject;
+        var tempLab = returnLabObject(this.state.inputValue) as LabObject;
+        tempLab.id = uuidv4();
+        return tempLab;
+    }
+
+    _deleteRow(id: string) {
+        this.setState({
+            labs: this.state.labs.filter((lab) => lab.id !== id),
+        });
     }
 
     _handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -69,8 +81,13 @@ class Adder extends Component<{}, AdderState> {
     }
 
     render() {
-        const rowList = this.state.labs.map((lab) =>
-        <Row code={lab.code} name={lab.name} price={lab.price} />
+        const rowList = this.state.labs.map((lab, index) =>
+        <CSSTransition
+            key={lab.id}
+            timeout={500}
+            classNames="adder-row">
+            <Row code={lab.code} name={lab.name} price={lab.price} onDelete={this._deleteRow.bind(this, lab.id)}/>
+        </CSSTransition> 
     );
 
         return (
@@ -83,7 +100,10 @@ class Adder extends Component<{}, AdderState> {
                             <div className="adder-header-price"> Price </div>
                             <div className="adder-header-placeholder">  </div>
                         </div>
-                        {rowList}
+                        <TransitionGroup
+                            className="adder-rows">
+                            {rowList}
+                        </TransitionGroup>
                         <div className="adder-add-row">
                             <div className={`adder-add-code ${this.state.rowValid ? "" : "invalid-input"}`}>
                                 <input 

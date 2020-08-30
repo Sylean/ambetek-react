@@ -2,7 +2,7 @@
     overflow: hidden;
     height: 50px;
     display: grid;
-    grid-template-columns: auto 40% 10% 50px;
+    grid-template-columns: auto 60% 10% 50px;
     box-shadow: rgba(0,0,0,0.1) 0 1px;
     margin-bottom: 3px;
     border-radius: 5px;
@@ -19,7 +19,9 @@
 }
 
 .adder-row-name {
-    
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .adder-row-price {
@@ -27,5 +29,44 @@
 }
 
 .adder-row-delete {
-    text-align: right;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .MuiSvgIcon-root {
+        padding: 3px;
+        height: 24px;
+        width: 24px;
+        display: block;
+    }
+
+    @keyframes buttonhover {
+        
+    } 
+
+    .adder-row-delete-btn {
+        vertical-align: middle;
+        text-align: center;
+        border: none;
+        background: transparent;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.2s;
+        transition-timing-function: ease-in-out;
+        color: #666666;
+
+        &:hover {
+            background-color: rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
+            transition-timing-function: ease-in-out;
+        }
+    }
+
+    
 }
