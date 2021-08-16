@@ -9,7 +9,7 @@ html, body {
     overflow-x: hidden;
     display: flex;
     scroll-snap-type: y mandatory;
-    height: calc(100% - 60px);
+    height: calc(100vh - 60px);
     width: 100%;
     justify-content: flex-start;
     align-items: center;
@@ -17,12 +17,12 @@ html, body {
     flex: none;
 
     @media only screen and (max-width: 554px) {
-        height: calc(100% - 120px);
+        height: calc(100vh - 120px);
     }
 }
 
 .home-slide {
-    height: 100%;
+    height: calc(100vh - 60px);
     width: 100%;
 
     display: flex;
