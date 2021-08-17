@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { ReactComponent as AmbetekLogo2 } from '../../resources/ambetek2.svg';
+import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import './Header.scss';
 
 function Header() {
     return  (
         <header className="nav-header">
           <div className="nav-header-left">
-            <Link to="/">
+            <MenuRoundedIcon className="nav-menu" />
+            <Link to="/" className="nav-header-logo-container">
               <AmbetekLogo2 className="nav-header-logo" />
             </Link>
             <nav className="nav-header-nav">
