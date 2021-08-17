@@ -43,6 +43,7 @@ html, body {
 }
 
 .sizer {
+    width: 100%;
     display: flex;
     flex: 1 1 100%;
     align-items: stretch;
@@ -51,6 +52,18 @@ html, body {
 .splash {
     display: flex;
     flex-flow: column nowrap;
+
+    background-image: url(../../resources/1x/ambetekblur.png);
+
+    @media only screen and (max-width: 2000px) {
+        background-image: url(../../resources/0.75x/ambetekblur.png);
+    }
+
+    @media only screen and (max-width: 1000px) {
+        background-image: url(../../resources/0.5x/ambetekblur.png);
+    }
+
+    color: white;
 }
 
 .splash-content {
