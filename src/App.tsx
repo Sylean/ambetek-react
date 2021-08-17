@@ -15,21 +15,18 @@ function App() {
   return (
     <Router>
       <div>
+      <Header />
         <Switch>
           <Route exact path="/adder">
-            <Header />
             <Adder />
           </Route>
           <Route exact path="/about">
-            <Header />
             <About />
           </Route>
           <Route exact path="/">
-            <Header />
             <Home />
           </Route>
           <Route>
-            <Header />
             <NotFound404 />
           </Route>
         </Switch>
